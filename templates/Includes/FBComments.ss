@@ -1,0 +1,1 @@
+<div class="fb-comments" data-href="$AbsoluteLink.ATT" data-num-posts="$FBConfig.NumPosts" data-width="$FBConfig.CommentWidth" data-colorscheme="$FBConfig.ColorScheme" data-mobile="$FBConfig.IsMobile"></div>
