@@ -15,18 +15,18 @@ INSTALLATION:
    to your html tag and probably add a getOGImage method to Page.
 3. Add 'FBCommentsExtension' to BlogEntry or Page (or whichever classes you want comments available).
    Probably something like:
-[php]
+```php
 BlogEntry::add_extension('FBComments');
-[/php]
+```
 4. Add the following just after the opening body tag IF you're not already including the FB API for
    something else (like buttons, etc):
-[html]
+```html
 <% include OptionalFBAPI %>
-[/html]
+```
 5. Add the following where you want comments to show up:
-[html]
+```html
 <% include FBComments %>
-[/html]
+```
 
 CONFIG OPTIONS:
 ---------------
