@@ -12,7 +12,7 @@ INSTALLATION:
    an 'fb-comments' folder in your site root.
 2. Either install 'tractorcow/silverstripe-opengraph' module (recommended) or add an 'OGApplicationID'
    method to SiteConfig with your fb application ID. If you do the former, you'll need/want to add $OGNS
-   to your html tag and probably add a getOGImage method to Page.
+   to your html tag and probably set OpenGraphObjectExtension::$default_image in _config.php.
 3. Add 'FBCommentsExtension' to BlogEntry or Page (or whichever classes you want comments available).
    Probably something like:
 ```
@@ -34,6 +34,33 @@ The following configuration options are available on FBComments:
 * num_posts - The number of comments to show initially. Default is 3.
 * comment_width - The width of the comment area. Default is 600
 * color_scheme - See FB documentation for details. Default is light.
+* notify - list of email addresses  to notify if there's a comment
+* notify_from - address from which the notification should come
+* notify_subject - subject of the notification email
+
+By default, there is no notification when a new comment is posted, but if
+you set a list of addresses, the plugin will send an email to those people.
+
+SAMPLE CONFIG FILE
+------------------
+```
+---
+name: 'fbcomments'
+---
+BlogEntry:
+  extensions:
+    0: 'FBComments'
+FBComments:
+  num_posts: 10
+  comment_width: 600
+  color_scheme: light
+  notify:
+    0: 'mark@adaircreative.com'
+  notify_from: 'noreply@yoursite.com'
+  notify_subject: 'New comment on yoursite.com'
+---
+```
+
 
 DEVELOPERS:
 -----------
